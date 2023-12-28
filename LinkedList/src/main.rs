@@ -33,6 +33,7 @@ impl List {
         Cons(elem, Box::new(self))
     }
 
+    // Consume a list, then return the same list appended to the end with a new element
     fn append(mut self, elem: u32) -> List {
         *self.back() = Cons(elem, Box::new(Nil));
         self
