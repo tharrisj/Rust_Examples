@@ -15,10 +15,27 @@ impl List {
         Nil
     }
 
+    // get final element of the list
+    fn back(&mut self) -> &mut List {
+        let mut node = self;
+        // loop to get the final element and return it.
+        loop {
+            match {node} {
+                &mut Cons(_, ref mut next) => { node = next },
+                other => { return other },
+            }
+        }
+    }
+
     // Consume a list, and return the same list with a new element at its front
     fn prepend(self, elem: u32) -> List {
         // `Cons` also has type List
         Cons(elem, Box::new(self))
+    }
+
+    fn append(mut self, elem: u32) -> List {
+        *self.back() = Cons(elem, Box::new(Nil));
+        self
     }
 
     // Return the length of the list
@@ -46,6 +63,7 @@ impl List {
                 // `format!` is similar to `print!`, but returns a heap
                 // allocated string instead of printing to the console
                 format!("{}, {}", head, tail.stringify())
+                //format!("Cons( {}, {} )", head, tail.stringify())
             },
             Nil => {
                 format!("Nil")
@@ -56,12 +74,13 @@ impl List {
 
 fn main() {
     // Create an empty linked list
-    let mut list = List::new();
+    let mut list = List::new();  // variable list holds a List enum with the value Nil
 
     // Prepend some elements
-    list = list.prepend(1);
-    list = list.prepend(2);
-    list = list.prepend(3);
+    list = list.prepend(1); // variable list holds a List enum with the value Cons(1, Nil)
+    list = list.prepend(2); // variable list holds a List enum with the value Cons(2, Cons(1, Nil))
+    list = list.prepend(3); // variable list holds a list enum with the value Cons(3, Cons(2, Cons(1, Nil)))
+    list = list.append(4); // variable list holds a list enum with the value Cons(3, Cons(2, Cons(1, Cons(4, Nil))))
 
     // Show the final state of the list
     println!("linked list has length: {}", list.len());
