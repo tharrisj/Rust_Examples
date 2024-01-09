@@ -47,6 +47,7 @@ fn main() {
             m+= 20;
             println!("Added 20! {:?}", m);
         },
+        #[allow(unreachable_patterns)]
         ref mut m => {
             // Got a reference. Gotta dereference it before we can
             // add anything to it.

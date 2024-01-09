@@ -31,8 +31,8 @@ struct Color {
 impl Display for Color {
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         let display_width: usize = 6;
-        let RGB_CALC = (self.red * 65536) + (self.green * 256) + self.blue;
-        write!(f, "RGB ({}, {}, {}) 0x{:0>display_width$X}", self.red, self.green, self.blue, RGB_CALC)
+        let rgb_calc = (self.red * 65536) + (self.green * 256) + self.blue;
+        write!(f, "RGB ({}, {}, {}) 0x{:0>display_width$X}", self.red, self.green, self.blue, rgb_calc)
     }
 }
 

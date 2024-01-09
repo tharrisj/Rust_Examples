@@ -2,7 +2,7 @@ use std::io;
 
 const F2C_RATIO: f64 = 5_f64/9_f64;
 const C2F_RATIO: f64 = 9_f64/5_f64;
-const F2C_C2F_Diff: f64 = 32_f64;
+const F2C_C2F_DIFF: f64 = 32_f64;
 
 fn convert_f_to_c() {
     let output: &str = "Please enter the value you would like to convert to Celcius: ";
@@ -14,7 +14,7 @@ fn convert_f_to_c() {
 
 // convert from farenheit to celcius
 fn f_to_c(faren: f64) -> f64 {
-    (faren - F2C_C2F_Diff) * F2C_RATIO
+    (faren - F2C_C2F_DIFF) * F2C_RATIO
 }
 
 fn convert_c_to_f() {
@@ -27,7 +27,7 @@ fn convert_c_to_f() {
 
 // convert from celcius to farenheit
 fn c_to_f(celc: f64) -> f64 {
-    (celc * C2F_RATIO) + F2C_C2F_Diff
+    (celc * C2F_RATIO) + F2C_C2F_DIFF
 }
 
 fn get_input(output: &str) -> f64 {

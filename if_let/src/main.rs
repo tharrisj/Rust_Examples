@@ -6,6 +6,7 @@ fn main() {
     let a = Foo::Bar;
 
     // Variable a matches Foo::Bar
+    #[allow(irrefutable_let_patterns)]
     if let Foo::Bar = a {
     // ^-- this causes a compile-time error. Use `if let` instead.
         println!("a is foobar");

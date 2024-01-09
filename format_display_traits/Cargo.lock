@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "FormatDisplayTraits"
+name = "format_display_traits"
 version = "0.1.0"
