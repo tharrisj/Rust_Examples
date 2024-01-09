@@ -21,9 +21,9 @@
         append a 1 to the end (equivalent to multiplying by 2 and adding 1): 0b00101 -> 5_u32
         This is the solution. 5
     Done manually:
-        1 kills 2, 3 kills 4, 5 kills 6, 7 kills 8, 9 kills 10 alive: [1,3,5,7,9]
-        1 kills 3, 5 kills 7, 9 kills 1 alive: [5, 9]
-        5 kills 9. alive[5]
+        1 kills 2, 3 kills 4, 5 kills 6, 7 kills 8, 9 kills 10  alive: [1,3,5,7,9]
+        1 kills 3, 5 kills 7, 9 kills 1                         alive: [5, 9]
+        5 kills 9.                                              alive: [5]
         5 is the survivor.
 */
 pub fn get_last_man_standing( num: u32 ) -> u32 {
