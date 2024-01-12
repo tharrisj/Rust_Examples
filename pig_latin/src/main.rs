@@ -12,6 +12,7 @@ fn pig_latinize(s: &str) -> String {
             let add_consonant = chars[0];
             let add_chars: Vec<char> = chars[1..].to_vec();
             ret+= &add_chars.into_iter().collect::<String>();
+            ret.push('-');
             ret.push(add_consonant);
             ret.push_str("ay");
         }

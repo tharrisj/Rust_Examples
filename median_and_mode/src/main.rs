@@ -11,10 +11,10 @@ fn get_mode(v: &Vec<i32>) -> i32 {
     }
     let mut max_key:i32 = 0;
     let mut max_value:i32 = 0;
-    for (key, value) in &num_freq {
-        if *value > max_value {
-            max_value = *value;
-            max_key = **key;
+    for (key, value) in num_freq {
+        if value > max_value {
+            max_value = value;
+            max_key = *key;
         }
     }
     max_key

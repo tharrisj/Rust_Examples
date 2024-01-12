@@ -29,7 +29,15 @@ struct Rectangle {
     bottom_right: Point,
 }
 
-fn rect_area(rectangle: Rectangle) -> f32 {
+impl Rectangle {
+    fn area(&self) -> f32 {
+        let side: f32 = self.top_left.y - self.bottom_right.y;
+        let top: f32 = self.bottom_right.x - self.top_left.x;
+        top*side
+    }
+}
+
+fn rect_area(rectangle: &Rectangle) -> f32 {
     let side: f32 = rectangle.top_left.y - rectangle.bottom_right.y;
     let top: f32 = rectangle.bottom_right.x - rectangle.top_left.x;
     top*side
@@ -92,7 +100,8 @@ fn main() {
         top_left: Point { x: (0_f32), y: (1_f32) },
         bottom_right: Point{ x: (1_f32), y: (0_f32) },
     };
-    println!("Area of testRect is: {}", rect_area(test_rect));
+    println!("Area of testRect is: {}", rect_area(&test_rect));
+    println!("IMPL of testRect is: {}", test_rect.area());
     
     let test_point = Point {
         x: 5.0,
