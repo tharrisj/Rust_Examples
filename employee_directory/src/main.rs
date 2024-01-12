@@ -1,14 +1,12 @@
 use std::io;
 use std::collections::HashMap;
 
-fn get_input(output: &str) -> String {
-    println!("{}", output);
+fn get_input(prompt: &str) -> String {
+    println!("{}", prompt);
     let mut ret: String = String::new();
     io::stdin()
         .read_line(&mut ret)
         .expect("Failed to read line!");
-
-//    let ret: f64 = ret.trim().parse().expect("Couldn't convert input to float!");
     ret
 }
 

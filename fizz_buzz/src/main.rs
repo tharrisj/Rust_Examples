@@ -1,7 +1,4 @@
-fn main() {
-    let to: u32 = 150;
-    fizzbuzz_to(to);
-}
+
 
 fn is_divisible_by(num: u32, denom: u32) -> bool {
     if num == 0 {
@@ -27,4 +24,9 @@ fn fizzbuzz_to(to: u32) {
     for n in 1..=to {
         fizzbuzz(n);
     }
+}
+
+fn main() {
+    let to: u32 = 150;
+    fizzbuzz_to(to);
 }

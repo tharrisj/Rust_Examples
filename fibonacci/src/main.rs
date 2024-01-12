@@ -14,27 +14,29 @@ fn get_input(output: &str) -> u32 {
     ret
 }
 
+fn get_fib_val(nth: u32) -> u32 {
+    let mut prev_prev: u32 = SEED_VAL_1;
+    let mut prev: u32 = SEED_VAL_2;
+    let mut current: u32;
+
+    let mut current_num: u32 = 3;
+    let result = loop {
+        current = prev_prev + prev;
+        if current_num == nth {
+            break current;
+        }
+        prev_prev = prev;
+        prev = current;
+        current_num+= 1_u32;
+    };
+    result
+}
+
 fn fib(nth: u32) -> u32 {
     let res: u32 = match nth {
         1_u32 => SEED_VAL_1,
         2_u32 => SEED_VAL_2,
-        _ => {
-            let mut prev_prev: u32 = SEED_VAL_1;
-            let mut prev: u32 = SEED_VAL_2;
-            let mut current: u32;
-
-            let mut current_num: u32 = 3;
-            let result = loop {
-                current = prev_prev + prev;
-                if current_num == nth {
-                    break current;
-                }
-                prev_prev = prev;
-                prev = current;
-                current_num+= 1_u32;
-            };
-            result
-        }
+        val => get_fib_val(val),
     };
     res
 }
