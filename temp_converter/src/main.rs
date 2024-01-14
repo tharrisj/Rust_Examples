@@ -9,7 +9,7 @@ fn convert_f_to_c() {
     let farenheit = get_input(output);
 
     let celcius = f_to_c(farenheit);
-    println!("{} in Farenheit is {} in Celcius.", farenheit, celcius);
+    println!("{:.2} in Farenheit is {:.2} in Celcius.", farenheit, celcius);
 }
 
 // convert from farenheit to celcius
@@ -22,7 +22,7 @@ fn convert_c_to_f() {
     let celcius = get_input(output);
 
     let farenheit = c_to_f(celcius);
-    println!("{} in Celcius is {} in Farenheit", celcius, farenheit);
+    println!("{:.2} in Celcius is {:.2} in Farenheit", celcius, farenheit);
 }
 
 // convert from celcius to farenheit

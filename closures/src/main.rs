@@ -17,6 +17,7 @@ fn main() {
     println!("closure_annotated: {}", closure_annotated(1));
     assert_eq!(closure_annotated(1), 43_u32);
     println!("closure_inferred: {}", closure_inferred(1));
+    assert_eq!(closure_inferred(1), 43_u32);
     // Once closure's type has been inferred, it cannot be inferred again with another type.
     //println!("cannot reuse closure_inferred with another type: {}", closure_inferred(42i64));
     // TODO: uncomment the line above and see the compiler error.
@@ -26,4 +27,6 @@ fn main() {
     let one = || 1;
     println!("closure returning one: {}", one());
 
+    let test_closure = || 3.1415_f64;
+    println!("test enclosure: {}", test_closure());
 }
