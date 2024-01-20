@@ -25,12 +25,9 @@ impl<'a> Player<'a> {
 
 fn main() {
     let mut me = Player::new("thomas");
-    {
-        let job = String::from("This is a job");
-        me.set_job(&job);
-    
-        println!("Player is: {:?}", me);
-    }
+    let job = String::from("This is a job");
+    me.set_job(&job);
+    println!("Player is: {:?}", me);
     let job = me.get_job();
 
     println!("Got Job: {}", job);
